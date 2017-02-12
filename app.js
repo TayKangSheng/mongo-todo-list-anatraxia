@@ -3,7 +3,7 @@ mongoose.connect('mongodb://sa:password@ds149059.mlab.com:49059/todolistdb')
 mongoose.Promise = global.Promise
 
 // const todos = require('./controllers/todos_controller.js')
-const Todo = require('./models/todo')
+var Todo = require('./models/todo')
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000

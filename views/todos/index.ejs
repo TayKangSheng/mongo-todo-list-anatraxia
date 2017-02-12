@@ -6,10 +6,11 @@
   </head>
   <body>
     <h1>All Todo list</h1>
-      <% allTodo.forEach(function (todo){ %>
-          <h2><%=todo.name%></h2>
+
     <ul>
+      <% allTodo.forEach(function (todo){ %>
       <li>
+        <h2><%=todo.name%></h2>
         <%=todo.description %> </a><span>(<%=todo.completed%>)</span>
       </li>
       <% }) %>

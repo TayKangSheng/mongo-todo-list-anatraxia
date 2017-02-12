@@ -7,19 +7,12 @@
     "start": "nodemon app",
     "test": "node test/todo_tests.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wdi-sg/tdd-todo-list.git"
-  },
   "dependencies": {
     "ejs": "^2.5.5",
     "express": "^4.14.1",
     "mongoose": "^4.8.2",
     "nodemon": "^1.11.0",
     "uuid": "^3.0.1"
-  },
-  "bugs": {
-    "url": "https://github.com/wdi-sg/tdd-todo-list/issues"
   },
   "homepage": "https://github.com/wdi-sg/tdd-todo-list#readme",
   "keywords": [],
