@@ -2,28 +2,37 @@ var mongoose = require('mongoose')
 mongoose.connect('mongodb://sa:password@ds149059.mlab.com:49059/todolistdb')
 mongoose.Promise = global.Promise
 
+const bodyParser = require('body-parser')
+
 // const todos = require('./controllers/todos_controller.js')
 var Todo = require('./models/todo')
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
-app.set('view engine', 'ejs')
+const todosController = require('./controllers/todosController')
+
+// startup api middleware, all req goes to controller
+app.use(bodyParser.json())
+
+//app.set('view engine', 'ejs')
 
 app.listen(port, function () {
   console.log('Express is running ' + port)
 })
 
+app.use('/todos', todosController)
+
 // Resful routes from todos in MongoDB
-app.get('/todos', function (req, res) {
-  var query = Todo.find({})
-  query.exec(function (err, todoResult) {
-    if (err) {
-      console.log(err)
-      return
-    }
-    res.render('./todos/index', {allTodo: todoResult})
-  })
-})
+// app.get('/todos', function (req, res) {
+//   var query = Todo.find({})
+//   query.exec(function (err, todoResult) {
+//     if (err) {
+//       console.log(err)
+//       return
+//     }
+//     res.render('./todos/index', {allTodo: todoResult})
+//   })
+// })
 // const readline = require('readline')
 // const rl = readline.createInterface(process.stdin, process.stdout)
 // const prefix = '> '
