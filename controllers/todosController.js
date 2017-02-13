@@ -49,7 +49,7 @@ router.put('/:id', function (req, res) {
       }
 
       if (updateResult) {
-        res.send({ Message: 'Todo list updated: ' + updateResult})
+        res.send({ Message: updateResult})
       } else {
         res.send({ Message: 'Todo id not updated'})
       }
@@ -65,9 +65,9 @@ router.delete('/:id', function (req, res) {
 
     if (destroyResult) {
       res.send({message: 'Success deleting todo list  with id:' + req.params.id})
-  } else {
-    res.send({message: 'todo list not deleted!'})
-  }
+    } else {
+      res.send({message: 'todo list not deleted!'})
+    }
   })
 })
 
