@@ -10,7 +10,7 @@ router.post('/', function (req, res) {
       console.log(err)
       return
     }
-    res.send({message: 'Todo create: ' + savedTodo})
+    res.send({message: savedTodo})
   })
 })
 router.get('/', function (req, res) {
@@ -31,7 +31,7 @@ router.get('/:id', function (req, res) {
       return
     }
     if (todoResult) {
-      res.send({ Message: 'Todo list found: ' + todoResult})
+      res.send({ Message: todoResult})
     } else {
       res.send({ Message: 'No todo id found'})
     }
@@ -77,7 +77,7 @@ router.delete('/', function (req, res) {
       console.log(err)
       return
     }
-    console.log('All todos destroy')
+    res.send('All todos destroy')
   })
 })
 
